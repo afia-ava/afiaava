@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Carousel from './Carousel';
 
 
 
@@ -53,10 +52,6 @@ export default function Home() {
         </div>
       </section>
   {/* Main Content */}
-  {/* Carousel Showcase */}
-  <div className="w-full flex flex-col items-center justify-center pt-40 pb-0 px-4 md:px-0">
-    <Carousel />
-  </div>
   <div className="flex flex-row w-full max-w-7xl gap-8 md:gap-20 items-start md:items-stretch mx-auto px-4 pt-12">
     <section className="flex-1 flex flex-col justify-center py-0 md:py-0 md:ml-4 lg:ml-8">
       <section id="things" className="mb-24 pt-12">
