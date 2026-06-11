@@ -2,14 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
-
+ 
 
 export default function Home() {
-  useEffect(() => {
-  }, []);
-
   return (
     <div id="home">
       <nav className="w-full flex items-center justify-between px-8 md:px-32 py-4 bg-black/80 border-b border-[#232323] sticky top-0 z-50">
@@ -47,7 +42,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex items-center justify-center p-8 md:p-16">
           <div className="bg-[#181818] rounded-2xl shadow-lg flex items-center justify-center w-full h-72 md:h-96 max-w-md border border-[#232526] overflow-hidden">
-            <Image src="/asset/afiaa.jpg" alt="Afia Ava" width={320} height={320} className="object-cover w-full h-full rounded-2xl" />
+            <Image src="/asset/afiaava.png" alt="Afia Ava" width={320} height={320} className="object-cover w-full h-full rounded-2xl" />
           </div>
         </div>
       </section>
