@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 function FooterScene() {
   const mx = 960, my = 72, mr = 48;
@@ -55,13 +56,17 @@ function FooterScene() {
   );
 }
 
-const FILTERS = ['All', 'Hardware', 'Software', 'Research'];
+const FILTERS = ['All', 'Hardware', 'Software'];
 
 const projects = [
-  { title: 'Project Title', tags: ['Hardware'], year: '2025', category: 'Hardware' },
-  { title: 'Project Title', tags: ['Software'], year: '2025', category: 'Software' },
-  { title: 'Project Title', tags: ['Research'], year: '2024', category: 'Research' },
-  { title: 'Project Title', tags: ['Hardware'], year: '2024', category: 'Hardware' },
+  { title: 'Model Rocket', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/rocket-launch.jpeg' },
+  { title: 'Breadboard', tags: ['Software'], year: '2026', category: 'Software', image: '/projects/breadboard.png' },
+  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg' },
+  { title: 'Armtender', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/armtender.jpeg' },
+  { title: 'Drone', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/drone.jpeg' },
+  { title: 'Video Cassette Recorder', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/vcr.jpeg' },
+  { title: 'Cadence', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/cadence.jpeg' },
+  { title: 'Statuesque', tags: ['Software'], year: '2025', category: 'Software', image: '/projects/statuesque.png' },
 ];
 
 export default function Home() {
@@ -72,9 +77,9 @@ export default function Home() {
     <div id="home" className="bg-black min-h-screen flex flex-col">
       <nav className="w-full flex items-center justify-center px-8 py-6 bg-black/95 border-b border-[#232323] sticky top-0 z-50">
         <div className="flex items-center gap-10">
-          <span className="text-white/70 font-bold text-base tracking-tight cursor-default">Projects</span>
-          <span className="text-white/70 font-bold text-base tracking-tight cursor-default">About</span>
-          <span className="text-white/70 font-bold text-base tracking-tight cursor-default">Thoughts</span>
+          <a href="#projects" className="text-white/70 hover:text-white font-bold text-base tracking-tight transition">Projects</a>
+          <a href="#about" className="text-white/70 hover:text-white font-bold text-base tracking-tight transition">About</a>
+          <a href="#thoughts" className="text-white/70 hover:text-white font-bold text-base tracking-tight transition">Thoughts</a>
         </div>
       </nav>
 
@@ -83,7 +88,7 @@ export default function Home() {
           I&apos;m Afia — hacking on engineering projects<br />and supporting tech education initiatives.
         </h1>
 
-        <section className="w-full max-w-4xl mt-20">
+        <section id="projects" className="w-full max-w-4xl mt-20 scroll-mt-24">
           <div className="flex gap-3 mb-10 justify-center flex-wrap">
             {FILTERS.map(f => (
               <button
@@ -103,7 +108,9 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-x-8 gap-y-12">
             {filtered.map((p, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="w-full aspect-video rounded-xl bg-[#111] border border-[#1e1e1e] mb-4" />
+                <div className="w-full aspect-video rounded-xl bg-[#111] border border-[#1e1e1e] mb-4 overflow-hidden relative">
+                  {p.image && <Image src={p.image} alt={p.title} fill className="object-cover"/>}
+                </div>
                 <h3 className="text-white font-bold text-lg tracking-tight">{p.title}</h3>
                 <div className="flex gap-3 mt-1 flex-wrap">
                   {p.tags.map(tag => (
@@ -116,7 +123,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full max-w-4xl mt-32">
+        <section id="about" className="w-full max-w-4xl mt-32 scroll-mt-24">
           <div className="flex gap-16">
             <div className="w-36 flex-shrink-0">
               <h2 className="text-white font-bold text-2xl tracking-tight">About me</h2>
@@ -140,7 +147,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full max-w-4xl mt-40">
+        <section id="thoughts" className="w-full max-w-4xl mt-40 scroll-mt-24">
           <div className="flex gap-16">
             <div className="w-36 flex-shrink-0">
               <h2 className="text-white font-bold text-2xl tracking-tight">Thoughts</h2>
