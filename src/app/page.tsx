@@ -46,14 +46,14 @@ function FooterScene({ dark }: { dark: boolean }) {
 const FILTERS = ['All', 'Hardware', 'Software'];
 
 const projects = [
-  { title: 'Model Rocket', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/rocket-launch.jpeg' },
-  { title: 'Breadboard', tags: ['Software'], year: '2026', category: 'Software', image: '/projects/breadboard.png' },
-  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg' },
-  { title: 'Armtender', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/armtender.jpeg' },
+  { title: 'Model Rocket', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/rocket-launch.jpeg', link: 'https://github.com/afia-ava/model-rocket' },
+  { title: 'Breadboard', tags: ['Software'], year: '2026', category: 'Software', image: '/projects/breadboard.png', link: 'https://github.com/afia-ava/breadboard' },
+  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg', link: 'https://github.com/afia-ava/shake-shake-boom' },
+  { title: 'Armtender', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/armtender.jpeg', link: 'https://github.com/afia-ava/Armtender' },
   { title: 'Drone', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/drone.jpeg' },
   { title: 'Video Cassette Recorder', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/vcr.jpeg' },
-  { title: 'Cadence', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/cadence.jpeg' },
-  { title: 'Statuesque', tags: ['Software'], year: '2025', category: 'Software', image: '/projects/statuesque.png' },
+  { title: 'Cadence', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/cadence.jpeg', link: 'https://github.com/afia-ava/cadence-lab' },
+  { title: 'Statuesque', tags: ['Software'], year: '2025', category: 'Software', image: '/projects/statuesque.png', link: 'https://github.com/afia-ava/statuesque' },
 ];
 
 export default function Home() {
@@ -123,10 +123,22 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 md:gap-y-12">
             {filtered.map((p, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className={`w-full aspect-video rounded-xl mb-4 overflow-hidden relative border ${dark ? 'bg-[#111] border-[#1e1e1e]' : 'bg-[#f5f5f5] border-[#e0e0e0]'}`}>
-                  {p.image && <Image src={p.image} alt={p.title} fill className="object-cover"/>}
-                </div>
-                <h3 className={`font-bold text-lg tracking-tight ${dark ? 'text-white' : 'text-black'}`}>{p.title}</h3>
+                {p.link ? (
+                  <a href={p.link} target="_blank" rel="noopener noreferrer">
+                    <div className={`w-full aspect-video rounded-xl mb-4 overflow-hidden relative border ${dark ? 'bg-[#111] border-[#1e1e1e]' : 'bg-[#f5f5f5] border-[#e0e0e0]'}`}>
+                      {p.image && <Image src={p.image} alt={p.title} fill className="object-cover"/>}
+                    </div>
+                  </a>
+                ) : (
+                  <div className={`w-full aspect-video rounded-xl mb-4 overflow-hidden relative border ${dark ? 'bg-[#111] border-[#1e1e1e]' : 'bg-[#f5f5f5] border-[#e0e0e0]'}`}>
+                    {p.image && <Image src={p.image} alt={p.title} fill className="object-cover"/>}
+                  </div>
+                )}
+                {p.link ? (
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className={`font-bold text-lg tracking-tight hover:underline ${dark ? 'text-white' : 'text-black'}`}>{p.title}</a>
+                ) : (
+                  <h3 className={`font-bold text-lg tracking-tight ${dark ? 'text-white' : 'text-black'}`}>{p.title}</h3>
+                )}
                 <div className="flex gap-3 mt-1 flex-wrap">
                   {p.tags.map(tag => (
                     <span key={tag} className={`text-xs font-medium ${dark ? 'text-[#999]' : 'text-[#666]'}`}>{tag}</span>
