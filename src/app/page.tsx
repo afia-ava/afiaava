@@ -100,7 +100,7 @@ export default function Home() {
 
       <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-20 px-4 md:px-6">
         <h1 className={`text-center text-2xl md:text-4xl font-bold tracking-tight mb-3 leading-snug max-w-5xl ${dark ? 'text-white' : 'text-black'}`}>
-          I&apos;m Afia — hacking on engineering projects<br className="max-md:hidden" />and supporting tech education initiatives.
+          I&apos;m Afia — hacking on engineering projects <br className="max-md:hidden" />and supporting tech education initiatives.
         </h1>
 
         <section id="projects" className="w-full max-w-4xl mt-16 md:mt-20 scroll-mt-24">
