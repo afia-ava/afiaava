@@ -181,10 +181,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <p className={`text-xs font-medium mb-3 tracking-wide uppercase ${dark ? 'text-[#555]' : 'text-[#aaa]'}`}>June 2026</p>
-              <div className="flex flex-col gap-3">
-                <span className={`text-lg md:text-xl transition cursor-pointer ${dark ? 'text-[#bdbdbd] hover:text-white' : 'text-[#444] hover:text-black'}`}>Making Intentional Choices Before Life Decides for You</span>
-                <span className={`text-lg md:text-xl transition cursor-pointer ${dark ? 'text-[#bdbdbd] hover:text-white' : 'text-[#444] hover:text-black'}`}>The Maker and the Institution</span>
-              </div>
+              <span className={`text-lg md:text-xl ${dark ? 'text-[#555]' : 'text-[#bbb]'}`}>soon to be posted</span>
             </div>
           </div>
         </section>
