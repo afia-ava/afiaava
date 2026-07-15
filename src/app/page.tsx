@@ -43,24 +43,18 @@ function FooterScene({ dark }: { dark: boolean }) {
   );
 }
 
-const FILTERS = ['All', 'Hardware', 'Software'];
-
 const projects = [
   { title: 'Model Rocket', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/rocket-launch.jpeg', link: 'https://github.com/afia-ava/model-rocket' },
-  { title: 'Breadboard', tags: ['Software'], year: '2026', category: 'Software', image: '/projects/breadboard.png', link: 'https://github.com/afia-ava/breadboard' },
-  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg', link: 'https://github.com/afia-ava/shake-shake-boom' },
   { title: 'Armtender', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/armtender.jpeg', link: 'https://github.com/afia-ava/Armtender' },
-  { title: 'Drone', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/drone.jpeg' },
-  { title: 'Video Cassette Recorder', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/vcr.jpeg' },
+  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg', link: 'https://github.com/afia-ava/shake-shake-boom' },
   { title: 'Cadence', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/cadence.jpeg', link: 'https://github.com/afia-ava/cadence-lab' },
-  { title: 'Statuesque', tags: ['Software'], year: '2025', category: 'Software', image: '/projects/statuesque.png', link: 'https://github.com/afia-ava/statuesque' },
+  { title: 'Video Cassette Recorder', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/vcr.jpeg' },
+  { title: 'Drone', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/drone.jpeg' },
 ];
 
 export default function Home() {
-  const [active, setActive] = useState('All');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const dark = theme === 'dark';
-  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active);
 
   return (
     <div id="home" className={`min-h-screen flex flex-col ${dark ? 'bg-black' : 'bg-white'}`}>
@@ -104,24 +98,8 @@ export default function Home() {
         </h1>
 
         <section id="projects" className="w-full max-w-4xl mt-16 md:mt-20 scroll-mt-24">
-          <div className="flex gap-3 mb-10 justify-center flex-wrap">
-            {FILTERS.map(f => (
-              <button
-                key={f}
-                onClick={() => setActive(f)}
-                className={`px-5 py-1.5 rounded-full text-sm font-bold tracking-tight border transition ${
-                  active === f
-                    ? dark ? 'border-white text-white' : 'border-black text-black'
-                    : dark ? 'border-[#333] text-[#666] hover:border-[#555] hover:text-white' : 'border-[#ccc] text-[#999] hover:border-[#888] hover:text-black'
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 md:gap-y-12">
-            {filtered.map((p, i) => (
+            {projects.map((p, i) => (
               <div key={i} className="group cursor-pointer">
                 {p.link ? (
                   <a href={p.link} target="_blank" rel="noopener noreferrer">
@@ -158,7 +136,7 @@ export default function Home() {
             <div className={`flex-1 text-lg md:text-xl leading-relaxed ${dark ? 'text-[#bdbdbd]' : 'text-[#333]'}`}>
               <p>Hi, Nice to meet you!</p>
               <p className="mt-4">I&apos;m Afia, currently on a gap year fellowship at Hack Club doing cool things with even cooler people. I listen to pop music, read self-development &amp; science fiction books, and love to meet new people in new places.</p>
-              <p className="mt-4">Please feel free to reach me at <a href="mailto:afiakhanomava@gmail.com" className={`hover:underline ${dark ? 'text-white' : 'text-black'}`}>afiakhanomava@gmail.com</a>!</p>
+              <p className="mt-4">Please feel free to reach me at <a href="mailto:hi@afiaava.com" className={`hover:underline ${dark ? 'text-white' : 'text-black'}`}>hi@afiaava.com</a>!</p>
               <div className="flex gap-4 mt-6">
                 <a href="https://github.com/Afia-Ava" target="_blank" rel="noopener noreferrer" className={`transition ${dark ? 'text-[#888] hover:text-white' : 'text-[#555] hover:text-black'}`}>
                   <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"/></svg>
