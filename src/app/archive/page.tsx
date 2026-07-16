@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { FooterScene } from '@/components/FooterScene';
 
 const items = [
@@ -19,10 +20,10 @@ export default function Archive() {
       <nav className={`w-full flex items-center px-6 md:px-8 py-6 border-b sticky top-0 z-50 ${dark ? 'bg-black/95 border-[#232323]' : 'bg-white/95 border-[#e5e5e5]'}`}>
         <div className="flex-1" />
         <div className="flex items-center gap-10">
-          <a href="/#projects" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Projects</a>
-          <a href="/#about" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>About</a>
-          <a href="/#thoughts" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Thoughts</a>
-          <a href="/archive" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Archive</a>
+          <Link href="/#projects" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Projects</Link>
+          <Link href="/#about" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>About</Link>
+          <Link href="/#thoughts" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Thoughts</Link>
+          <Link href="/archive" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Archive</Link>
         </div>
         <div className="flex-1 flex justify-end">
           <button
