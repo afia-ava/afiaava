@@ -10,9 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Afia Ava | Portfolio',
+  title: 'Afia Ava',
   description:
     'Portfolio of a tech, engineering, sustainability, and film enthusiast. Cinematic, modern, and elegant.',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
