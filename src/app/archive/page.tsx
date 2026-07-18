@@ -9,6 +9,7 @@ const items = [
   { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/', meta: 'by David Foster Wallace' },
   { title: 'Ford v Ferrari (2019)', url: 'https://www.imdb.com/title/tt1950186/', meta: 'Directed by James Mangold' },
   { title: 'Fahrenheit 451', url: 'https://en.wikipedia.org/wiki/Fahrenheit_451', meta: 'by Ray Bradbury' },
+  { title: 'The Sunflower', url: 'https://en.wikipedia.org/wiki/The_Sunflower_(book)', meta: 'by Simon Wiesenthal' },
 ];
 
 export default function Archive() {
