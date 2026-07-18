@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { FooterScene } from '@/components/FooterScene';
 
 const items = [
-  { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests' },
-  { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/' },
-  { title: 'Ford v Ferrari', url: 'https://www.imdb.com/title/tt1950186/' },
-  { title: 'Fahrenheit 451', url: 'https://en.wikipedia.org/wiki/Fahrenheit_451' },
+  { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests', meta: 'by Trae Stephens and Markie Wagner' },
+  { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/', meta: 'by David Foster Wallace' },
+  { title: 'Ford v Ferrari (2019)', url: 'https://www.imdb.com/title/tt1950186/', meta: 'Directed by James Mangold' },
+  { title: 'Fahrenheit 451', url: 'https://en.wikipedia.org/wiki/Fahrenheit_451', meta: 'by Ray Bradbury' },
 ];
 
 export default function Archive() {
@@ -72,6 +72,9 @@ export default function Archive() {
                   >
                     {item.title}
                   </a>
+                  {item.meta && (
+                    <span className={`text-sm ml-2 ${dark ? 'text-[#777]' : 'text-[#999]'}`}>{item.meta}</span>
+                  )}
                 </li>
               ))}
             </ul>
