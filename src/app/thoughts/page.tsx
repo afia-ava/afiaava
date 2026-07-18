@@ -4,14 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FooterScene } from '@/components/FooterScene';
 
-const items = [
-  { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests' },
-  { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/' },
-  { title: 'Ford v Ferrari', url: 'https://www.imdb.com/title/tt1950186/' },
-  { title: 'Fahrenheit 451', url: 'https://en.wikipedia.org/wiki/Fahrenheit_451' },
+const posts: { date: string; title: string }[] = [
+  { date: 'July 2026', title: 'soon to be posted' },
 ];
 
-export default function Archive() {
+export default function Thoughts() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const dark = theme === 'dark';
 
@@ -54,24 +51,15 @@ export default function Archive() {
       <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-20 px-4 md:px-6">
         <div className="w-full max-w-2xl">
           <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${dark ? 'text-white' : 'text-black'}`}>
-            Archive
+            Thoughts
           </h1>
-          <p className={`text-lg md:text-xl max-w-xl ${dark ? 'text-[#bdbdbd]' : 'text-[#333]'}`}>
-            A list of interesting and inspiring pieces I&apos;ve come across
-          </p>
 
           <section className="mt-6">
-            <ul className="flex flex-col gap-3 list-disc pl-5">
-              {items.map((item) => (
-                <li key={item.url}>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`font-bold text-base tracking-tight underline ${dark ? 'text-white' : 'text-black'}`}
-                  >
-                    {item.title}
-                  </a>
+            <ul className="flex flex-col gap-3">
+              {posts.map((post) => (
+                <li key={post.title} className="flex items-baseline gap-5">
+                  <span className={`font-bold text-base tracking-tight whitespace-nowrap ${dark ? 'text-[#666]' : 'text-[#999]'}`}>{post.date}</span>
+                  <span className={`font-medium text-lg tracking-tight ${dark ? 'text-[#bbb]' : 'text-[#777]'}`}>{post.title}</span>
                 </li>
               ))}
             </ul>
