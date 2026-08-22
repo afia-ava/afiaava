@@ -4,11 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FooterScene } from '@/components/FooterScene';
 
-const posts: { date: string; title: string; slug: string }[] = [
-  { date: 'August 2026', title: 'The Case for Bread Slicers and Live Photos', slug: 'the-case-for-bread-slicers-and-live-photos' },
-];
-
-export default function Thoughts() {
+export default function BreadSlicersAndLivePhotos() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const dark = theme === 'dark';
 
@@ -48,27 +44,37 @@ export default function Thoughts() {
         </div>
       </nav>
 
-      <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-20 px-4 md:px-6">
+      <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-40 md:pb-56 px-4 md:px-6">
         <div className="w-full max-w-2xl">
-          <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${dark ? 'text-white' : 'text-black'}`}>
-            Thoughts
+          <Link
+            href="/thoughts"
+            className={`font-bold text-sm tracking-tight transition ${dark ? 'text-[#666] hover:text-white' : 'text-[#999] hover:text-black'}`}
+          >
+            ← Thoughts
+          </Link>
+
+          <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mt-6 mb-3 ${dark ? 'text-white' : 'text-black'}`}>
+            The Case for Bread Slicers and Live Photos
           </h1>
 
-          <section className="mt-6">
-            <ul className="flex flex-col gap-3">
-              {posts.map((post) => (
-                <li key={post.title} className="flex items-baseline gap-5">
-                  <span className={`font-bold text-base tracking-tight whitespace-nowrap ${dark ? 'text-[#666]' : 'text-[#999]'}`}>{post.date}</span>
-                  <Link
-                    href={`/thoughts/${post.slug}`}
-                    className={`font-medium text-lg tracking-tight transition ${dark ? 'text-[#bbb] hover:text-white' : 'text-[#777] hover:text-black'}`}
-                  >
-                    {post.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <p className={`font-bold text-base tracking-tight mb-10 ${dark ? 'text-[#666]' : 'text-[#999]'}`}>
+            by palooza, giragon, aka
+          </p>
+
+          <article className={`flex flex-col gap-6 font-medium text-lg leading-relaxed tracking-tight ${dark ? 'text-[#bbb]' : 'text-[#777]'}`}>
+            <p>
+              The mundane things in life are what make it awesome. One fine morning, you wake up and get bread from the farmers market. The machine, the machine cuts it for you. With its loving whir and sweet gentle opening of its lid. It doesn&rsquo;t want to hurt you. It slices the bread and gives it back. Then it&rsquo;s so good. So good. And then you put butter on it and toast it and it&apos;s delicious. It&rsquo;s really good. But, does the bread suffer?
+            </p>
+            <p>
+              It&rsquo;s just like the question of whether people in live photos are real. You tap the screen, just a little, and those awesome people start talking again. Photos were always just meant to stay the same, but it moves and wiggles and jiggles and captures all the fun. The whole deal you signed with a camera is you point it at a second, the second dies, and you keep the moment as a pressed flower. But now the flower breathes. They move on your screen, but they&rsquo;re just little colored squares. The live photos make them real. The frozen people come alive and dance.
+            </p>
+            <p>
+              Greatness is the refusal of ordinary things to remain ordinary. A perfectly sliced piece of bread toast (with avocado of course) and a photo that keeps breathing are both doing the same spiritual work. They both make our life a little more alive, and that&rsquo;s why they belong in the top 10 inventions ever on earth.
+            </p>
+            <p>
+              Thank you, bread slicer. Thank you, Apple. I love you, Tim Cook.
+            </p>
+          </article>
         </div>
       </main>
 
