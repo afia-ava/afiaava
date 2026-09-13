@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FooterScene } from '@/components/FooterScene';
 
 const items = [
+  { title: 'How I Built a Toaster From Scratch', url: 'https://www.ted.com/talks/thomas_thwaites_how_i_built_a_toaster_from_scratch', meta: 'by Thomas Thwaites' },
   { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests', meta: 'by Trae Stephens and Markie Wagner' },
   { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/', meta: 'by David Foster Wallace' },
   { title: 'Ford v Ferrari (2019)', url: 'https://www.imdb.com/title/tt1950186/', meta: 'Directed by James Mangold' },
