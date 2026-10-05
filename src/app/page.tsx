@@ -6,12 +6,12 @@ import { useTheme } from '@/components/useTheme';
 import { FooterScene } from '@/components/FooterScene';
 
 const projects = [
-  { title: 'Model Rocket', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/rocket-launch.jpeg', link: 'https://github.com/afia-ava/model-rocket' },
-  { title: 'Armtender', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/armtender.jpeg', link: 'https://github.com/afia-ava/Armtender' },
-  { title: 'Hot Potato', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/hot-potato.jpg', link: 'https://github.com/afia-ava/shake-shake-boom' },
-  { title: 'Cadence', tags: ['Hardware'], year: '2026', category: 'Hardware', image: '/projects/cadence.jpeg', link: 'https://github.com/afia-ava/cadence-lab' },
-  { title: 'Video Cassette Recorder', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/vcr.jpeg' },
-  { title: 'Drone', tags: ['Hardware'], year: '2025', category: 'Hardware', image: '/projects/drone.jpeg' },
+  { title: 'Model Rocket', image: '/projects/rocket-launch.jpeg', link: 'https://github.com/afia-ava/model-rocket' },
+  { title: 'Armtender', image: '/projects/armtender.jpeg', link: 'https://github.com/afia-ava/Armtender' },
+  { title: 'Hot Potato', image: '/projects/hot-potato.jpg', link: 'https://github.com/afia-ava/shake-shake-boom' },
+  { title: 'Cadence', image: '/projects/cadence.jpeg', link: 'https://github.com/afia-ava/cadence-lab' },
+  { title: 'Video Cassette Recorder', image: '/projects/vcr.jpeg' },
+  { title: 'Drone', image: '/projects/drone.jpeg' },
 ];
 
 export default function Home() {
@@ -104,12 +104,6 @@ export default function Home() {
                 ) : (
                   <h3 className={`font-bold text-lg tracking-tight ${dark ? 'text-[#fff6ee]' : 'text-black'}`}>{p.title}</h3>
                 )}
-                <div className="flex gap-3 mt-1 flex-wrap">
-                  {p.tags.map(tag => (
-                    <span key={tag} className={`text-xs font-medium ${dark ? 'text-[#999]' : 'text-[#666]'}`}>{tag}</span>
-                  ))}
-                </div>
-                <p className={`text-xs mt-1 ${dark ? 'text-[#444]' : 'text-[#aaa]'}`}>{p.year}</p>
               </div>
             ))}
           </div>
