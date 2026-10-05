@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
 import Link from 'next/link';
+import { useTheme } from '@/components/useTheme';
 import { FooterScene } from '@/components/FooterScene';
 
 const posts: { date: string; title: string; slug: string }[] = [
@@ -9,22 +9,25 @@ const posts: { date: string; title: string; slug: string }[] = [
 ];
 
 export default function Thoughts() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useTheme();
   const dark = theme === 'dark';
 
   return (
-    <div className={`min-h-screen flex flex-col ${dark ? 'bg-black' : 'bg-white'}`}>
-      <nav className={`w-full flex items-center px-6 md:px-8 py-6 border-b sticky top-0 z-50 ${dark ? 'bg-black/95 border-[#232323]' : 'bg-white/95 border-[#e5e5e5]'}`}>
-        <div className="flex-1" />
-        <div className="flex items-center gap-10">
-          <Link href="/about" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>About</Link>
-          <Link href="/thoughts" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Thoughts</Link>
-          <Link href="/archive" className={`font-bold text-base tracking-tight transition ${dark ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'}`}>Archive</Link>
+    <div className={`min-h-screen flex flex-col ${dark ? 'bg-black' : 'bg-[#fff6ee]'}`}>
+      <nav className={`w-full flex items-center px-6 md:px-8 py-6 border-b sticky top-0 z-50 ${dark ? 'bg-black/95 border-[#232323]' : 'bg-[#fff6ee]/95 border-[#e5e5e5]'}`}>
+        <div className="flex items-center gap-3 ml-4 md:ml-16">
+          <Link href="/about" className={`font-bold text-base tracking-tight transition ${dark ? 'text-[#fff6ee]/70 hover:text-[#fff6ee]' : 'text-black/60 hover:text-black'}`}>about</Link>
+          <span className={dark ? 'text-[#fff6ee]/30' : 'text-black/30'}>/</span>
+          <Link href="/thoughts" className={`font-bold text-base tracking-tight transition ${dark ? 'text-[#fff6ee]/70 hover:text-[#fff6ee]' : 'text-black/60 hover:text-black'}`}>thoughts</Link>
+          <span className={dark ? 'text-[#fff6ee]/30' : 'text-black/30'}>/</span>
+          <Link href="/archive" className={`font-bold text-base tracking-tight transition ${dark ? 'text-[#fff6ee]/70 hover:text-[#fff6ee]' : 'text-black/60 hover:text-black'}`}>archive</Link>
+          <span className={dark ? 'text-[#fff6ee]/30' : 'text-black/30'}>/</span>
+          <Link href="/things-about-stuff" className={`font-bold text-base tracking-tight transition ${dark ? 'text-[#fff6ee]/70 hover:text-[#fff6ee]' : 'text-black/60 hover:text-black'}`}>things about stuff</Link>
         </div>
         <div className="flex-1 flex justify-end">
           <button
             onClick={() => setTheme(dark ? 'light' : 'dark')}
-            className={`p-2 rounded-full transition ${dark ? 'text-white/50 hover:text-white' : 'text-black/40 hover:text-black'}`}
+            className={`p-2 rounded-full transition ${dark ? 'text-[#fff6ee]/50 hover:text-[#fff6ee]' : 'text-black/40 hover:text-black'}`}
             aria-label="Toggle theme"
           >
             {dark ? (
@@ -50,7 +53,7 @@ export default function Thoughts() {
 
       <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-20 px-4 md:px-6">
         <div className="w-full max-w-2xl">
-          <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${dark ? 'text-white' : 'text-black'}`}>
+          <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${dark ? 'text-[#fff6ee]' : 'text-black'}`}>
             Thoughts
           </h1>
 
@@ -61,7 +64,7 @@ export default function Thoughts() {
                   <span className={`font-bold text-base tracking-tight whitespace-nowrap ${dark ? 'text-[#666]' : 'text-[#999]'}`}>{post.date}</span>
                   <Link
                     href={`/thoughts/${post.slug}`}
-                    className={`font-medium text-lg tracking-tight transition ${dark ? 'text-[#bbb] hover:text-white' : 'text-[#777] hover:text-black'}`}
+                    className={`font-medium text-lg tracking-tight transition ${dark ? 'text-[#e6d6c8] hover:text-[#fff6ee]' : 'text-[#777] hover:text-black'}`}
                   >
                     {post.title}
                   </Link>
@@ -72,7 +75,7 @@ export default function Thoughts() {
         </div>
       </main>
 
-      <footer className={`w-full border-t overflow-hidden ${dark ? 'bg-black border-[#1a1a1a]' : 'bg-white border-[#e5e5e5]'}`}>
+      <footer className={`w-full border-t overflow-hidden ${dark ? 'bg-black border-[#1a1a1a]' : 'bg-[#fff6ee] border-[#e5e5e5]'}`}>
         <FooterScene dark={dark} />
       </footer>
     </div>

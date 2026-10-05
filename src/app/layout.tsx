@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${inter.className} antialiased bg-black text-white min-h-screen`}
+        className={`${inter.variable} ${inter.className} antialiased bg-black text-[#fff6ee] min-h-screen`}
         style={{
           background: 'linear-gradient(120deg, #181818 0%, #232526 100%)',
         }}

@@ -4,16 +4,9 @@ import Link from 'next/link';
 import { useTheme } from '@/components/useTheme';
 import { FooterScene } from '@/components/FooterScene';
 
-const items = [
-  { title: 'How I Built a Toaster From Scratch', url: 'https://www.ted.com/talks/thomas_thwaites_how_i_built_a_toaster_from_scratch', meta: 'by Thomas Thwaites' },
-  { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests', meta: 'by Trae Stephens and Markie Wagner' },
-  { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/', meta: 'by David Foster Wallace' },
-  { title: 'Ford v Ferrari (2019)', url: 'https://www.imdb.com/title/tt1950186/', meta: 'Directed by James Mangold' },
-  { title: 'Fahrenheit 451', url: 'https://en.wikipedia.org/wiki/Fahrenheit_451', meta: 'by Ray Bradbury' },
-  { title: 'The Sunflower', url: 'https://en.wikipedia.org/wiki/The_Sunflower_(book)', meta: 'by Simon Wiesenthal' },
-];
+const items: { title: string; url: string; meta?: string }[] = [];
 
-export default function Archive() {
+export default function ThingsAboutStuff() {
   const [theme, setTheme] = useTheme();
   const dark = theme === 'dark';
 
@@ -59,10 +52,10 @@ export default function Archive() {
       <main className="flex flex-col items-center flex-1 pt-20 md:pt-36 pb-20 px-4 md:px-6">
         <div className="w-full max-w-2xl">
           <h1 className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${dark ? 'text-[#fff6ee]' : 'text-black'}`}>
-            Archive
+            Things about stuff
           </h1>
           <p className={`text-lg md:text-xl max-w-xl ${dark ? 'text-[#e6d6c8]' : 'text-[#333]'}`}>
-            A list of interesting and inspiring pieces I&apos;ve come across
+            pictures incoming
           </p>
 
           <section className="mt-6">
