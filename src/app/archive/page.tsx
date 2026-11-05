@@ -5,6 +5,7 @@ import { FooterScene } from '@/components/FooterScene';
 import { Nav } from '@/components/Nav';
 
 const items = [
+  { title: 'Carrie (2026)', url: 'https://www.imdb.com/title/tt11540908/', meta: 'by Mike Flanagan' },
   { title: 'How I Built a Toaster From Scratch', url: 'https://www.ted.com/talks/thomas_thwaites_how_i_built_a_toaster_from_scratch', meta: 'by Thomas Thwaites' },
   { title: 'Choose Good Quests', url: 'https://www.piratewires.com/p/choose-good-quests', meta: 'by Trae Stephens and Markie Wagner' },
   { title: 'This is Water', url: 'https://fs.blog/david-foster-wallace-this-is-water/', meta: 'by David Foster Wallace' },
@@ -27,7 +28,7 @@ export default function Archive() {
             Archive
           </h1>
           <p className={`text-base md:text-xl max-w-xl ${dark ? 'text-[#e6d6c8]' : 'text-[#333]'}`}>
-            A list of interesting and inspiring pieces I&apos;ve come across
+            A list of interesting and inspiring pieces
           </p>
 
           <section className="mt-6">
