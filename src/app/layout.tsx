@@ -14,7 +14,7 @@ const description =
 const previewImage = { url: '/things-about-stuff/ces.jpg', width: 2112, height: 1584, alt: 'Afia at CES' };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://afiaava.com'),
+  metadataBase: new URL('https://www.afiaava.com'),
   title: 'Afia Ava',
   description,
   openGraph: {
