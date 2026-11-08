@@ -6,6 +6,7 @@ import { FooterScene } from '@/components/FooterScene';
 import { Nav } from '@/components/Nav';
 
 const posts: { date: string; title: string; slug: string }[] = [
+  { date: 'November 2026', title: 'The Pursuit of Fulfillment', slug: 'the-pursuit-of-fulfillment' },
   { date: 'August 2026', title: 'The Case for Bread Slicers and Live Photos', slug: 'the-case-for-bread-slicers-and-live-photos' },
 ];
 
@@ -24,13 +25,13 @@ export default function Thoughts() {
           </h1>
 
           <section className="mt-6">
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-6">
               {posts.map((post) => (
-                <li key={post.title} className="flex items-baseline gap-5">
-                  <span className={`font-bold text-base tracking-tight whitespace-nowrap ${dark ? 'text-[#666]' : 'text-[#999]'}`}>{post.date}</span>
+                <li key={post.title} className="flex flex-col gap-1">
+                  <span className={`font-bold text-base tracking-tight whitespace-nowrap ${dark ? 'text-[#666]' : 'text-[#777]'}`}>{post.date}</span>
                   <Link
                     href={`/thoughts/${post.slug}`}
-                    className={`font-medium text-base md:text-lg tracking-tight transition ${dark ? 'text-[#e6d6c8] hover:text-[#fff6ee]' : 'text-[#777] hover:text-black'}`}
+                    className={`font-medium text-base md:text-lg tracking-tight transition ${dark ? 'text-[#e6d6c8] hover:text-[#fff6ee]' : 'text-[#222] hover:text-black'}`}
                   >
                     {post.title}
                   </Link>

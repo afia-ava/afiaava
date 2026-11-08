@@ -26,11 +26,15 @@ export default function BreadSlicersAndLivePhotos() {
             The Case for Bread Slicers and Live Photos
           </h1>
 
+          <p className={`font-bold text-base tracking-tight ${dark ? 'text-[#666]' : 'text-[#777]'}`}>
+            August 21, 2026
+          </p>
+
           <p className={`font-bold text-base tracking-tight mb-10 ${dark ? 'text-[#666]' : 'text-[#999]'}`}>
             by palooza, giragon, aka
           </p>
 
-          <article className={`flex flex-col gap-6 font-medium text-base md:text-lg leading-relaxed tracking-tight ${dark ? 'text-[#e6d6c8]' : 'text-[#777]'}`}>
+          <article className={`flex flex-col gap-6 font-medium text-base md:text-lg leading-relaxed tracking-tight ${dark ? 'text-[#e6d6c8]' : 'text-[#222]'}`}>
             <p>
               The mundane things in life are what make it awesome. One fine morning, you wake up and get bread from the farmers market. The machine, the machine cuts it for you. With its loving whir and sweet gentle opening of its lid. It doesn&rsquo;t want to hurt you. It slices the bread and gives it back. Then it&rsquo;s so good. So good. And then you put butter on it and toast it and it&apos;s delicious. It&rsquo;s really good. But, does the bread suffer?
             </p>
