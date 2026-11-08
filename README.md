@@ -8,8 +8,8 @@ Live at [afiaava.com](https://afiaava.com).
 
 | Page | Path | What's there |
 | --- | --- | --- |
-| about | `/` (also `/about`) | About me of course, links to my socials, and some of my projects |
-| thoughts | `/thoughts` | Essays I've written (hopefully real essays soon) |
+| about | `/` (also `/about`) | About me, of course, links to my socials, and some of my projects |
+| thoughts | `/thoughts` | I share some essays and notes and writings |
 | archive | `/archive` | Interesting and inspiring pieces I've come across |
 | things about stuff | `/things-about-stuff` | Bunch of pictures of bunch of experiences |
 
